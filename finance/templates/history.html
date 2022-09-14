@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price (USD)</th>
+                <th>Total Price (USD)</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in transactions %}
+                <tr>
+                    <td><b> {{ record["type"] }} </b></td>
+                    <td> {{ record["symbol"] }}</td>
+                    <td> {{ record["shares"] }}</td>
+                    <td> {{ usd(record["price"]) }} </td>
+                    {% if record["type"] == "SELL" %}
+                        <td><font color="green"> +{{ usd(record["price"] * -record["shares"]) }} </font></td>
+                    {% elif record["type"] == "BUY" %}
+                        <td><font color="red"> -{{ usd(record["price"] * record["shares"]) }} </font></td>
+                    {% endif %}
+                    <td> {{ record["timestamp"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

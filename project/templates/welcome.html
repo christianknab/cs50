@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+{% block main %}
+  <div>
+    <div class="wrapper">
+        <p class="mt-5" style="font-size: xx-large; color: #332211;"><b>Hello, {{ username }}!</b></p>
+        <p class="card-text">Enjoy a nice cup of coffee</p>
+    </div>
+    <img class="mt-5" align="middle" style="max-width:50%; max-height:50%;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbestanimations.com%2FFood%2FBeverages%2FCoffee%2Fcoffee-animated-gif-15.gif&f=1&nofb=1" alt="Coffee Gif">
+    <p class="card-text"><small class="text-muted">Website created by Christian Knab</small></p>
+  </div>
+{% endblock %}

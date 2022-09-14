@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Notes
+{% endblock %}
+{% block main %}
+    <button class="btn btn-primary"><a href="/create_note" style="color: white; text-decoration: none;">Create New Note</a></button>
+    <table style='margin-top: 50px' class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 5%;"> Rating </th>
+                <th scope="col" style="width: 10%;"> Coffee Name </th>
+                <th scope="col" style="width: 12%;"> Roaster </th>
+                <th scope="col" style="width: 10%;"> Origin </th>
+                <th scope="col" style="width: 8%;"> Roast </th>
+                <th scope="col" style="width: 20%;"> Flavors </th>
+                <th scope="col" style="width: 25%;"> Notes </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for note in notes if note["name"] != "N/A" %}
+                <tr>
+                    <td> {{ note["rating"] }} </td>
+                    <td> {{ note["name"] }} </td>
+                    <td> {{ note["roaster"] }} </td>
+                    <td> {{ note["origin"] }} </td>
+                    <td> {{ note["roast"] }} </td>
+                    <td> {{ note["flavors"] }} </td>
+                    <td> {{ note["notes"] }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table style='margin-top: 50px' class="table">
+        <thead>
+            <tr>
+                <th scope="col"> Stock Symbol </th>
+                <th scope="col"> Company Name </th>
+                <th scope="col"> Shares </th>
+                <th scope="col"> Price (USD) </th>
+                <th scope="col"> TOTAL </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in user_stock_info if record["symbol"] != "N/A" %}
+                <tr>
+                    <td> {{ record["symbol"] }} </td>
+                    <td> {{ record["name"] }} </td>
+                    <td> {{ record["total_shares"] }} </td>
+                    <td> {{ usd(record["price"]) }} </td>
+                    <td> {{ usd(record["total_shares"] * record["price"]) }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <table align="right">
+            <tr>
+                <td> Cash: {{ user_cash }}</td>
+            </tr>
+            <tr>
+                <td> TOTAL: {{ total }} </td>
+        </table>
+{% endblock %}

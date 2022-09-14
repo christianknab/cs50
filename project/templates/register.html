@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirmation" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <div class="p-5">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.gizmocrazed.com%2Fwp-content%2Fuploads%2F2018%2F08%2Fea0f3438ff258f7ecb669b026bba7c22-1-1.gif&f=1&nofb=1" alt="pour over gif">
+    </div>
+{% endblock %}

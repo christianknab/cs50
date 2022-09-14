@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Notes
+{% endblock %}
+{% block main %}
+  <form action="/create_note" method="post">
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" name="name" placeholder="Coffee Name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="roaster" placeholder="Roaster">
+      </div>
+      <div class="col">
+          <input type="text" class="form-control" name="origin" placeholder="Origin">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mt-2">
+          <select name="roast" class="form-control">
+            <option selected disabled>Roast Level</option>
+            <option>Light</option>
+            <option>Light-Medium</option>
+            <option>Medium</option>
+            <option>Medium-Dark</option>
+            <option>Dark</option>
+          </select>
+      </div>
+      <div class="col mt-2">
+          <select name="rating" class="form-control">
+            <option selected disabled>Rating</option>
+            <option>10</option>
+            <option>9</option>
+            <option>8</option>
+            <option>7</option>
+            <option>6</option>
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mt-2">
+        <input type="text" class="form-control" name="flavors" placeholder="Flavors">
+      </div>
+      <div class="col mt-2">
+        <input type="text" class="form-control" name="notes" placeholder="Notes">
+      </div>
+    </div>
+    <button class="btn btn-primary mt-4" type="submit">Create Note</button>
+  </form>
+{% endblock %}
